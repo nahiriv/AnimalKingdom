@@ -10,14 +10,15 @@
 - Static attributes in each derived class that count how many animals of that species have been created.
 
 ## Project Structure
+
+```bash
 Animal-Kingdom/
-│
 ├── src/
 │   └── Animals/
 │       ├── Animal.java
 │       ├── Dog.java
 │       ├── GuineaPig.java
 │       └── Main.java
-│
 ├── README.md
 └── .gitignore
+
