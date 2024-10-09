@@ -1,5 +1,4 @@
-package Animals;
-
+package Zoo;
 import java.util.ArrayList;
 
 //Clase que representa un área dentro de un zoológico.
