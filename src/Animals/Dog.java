@@ -2,7 +2,7 @@ package Animals;
 
 public class Dog extends Animal{
     private static int counter = 0;
-    public Dog(String name, String breed){
+    public Dog(String name, String breed, int birthYear){
         super(name, breed, "Dog");
         counter++;
     }

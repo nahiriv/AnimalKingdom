@@ -2,7 +2,7 @@ package Animals;
 
 public class GuineaPig extends Animal{
     static int counter = 0;
-    public GuineaPig(String name, String breed){
+    public GuineaPig(String name, String breed, int birthYear) {
         super(name, breed, "GuineaPig");
         counter++;
     }

@@ -4,6 +4,7 @@ public abstract class Animal {
     private String name;
     private String breed;
     private String specie;
+    private int birthYear;
     private static int Animalcounter = 0;
     public Animal(String name, String breed, String specie) {
         this.name = name;
@@ -25,7 +26,14 @@ public abstract class Animal {
         return this.specie;
     }
 
-    //getter
+    public int getBirthYear() {
+        return this.birthYear;
+    }
+
+    public int setBirthYear() {
+        return this.birthYear;
+    }
+
     public String getName(){
         return this.name;
     }
