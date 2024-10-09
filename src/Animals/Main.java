@@ -1,6 +1,5 @@
 package Animals;
-import java.util.List;
-import java.util.stream.Collectors;
+import Zoo.Zoo;
 
 public class Main {
 
@@ -21,23 +20,5 @@ public class Main {
         System.out.println("Quantity of guinea pigs: " + GuineaPig.getCounter());
 
         System.out.println("Total number of animals: " + Animal.getCounter());
-
-
-        Zoo myZoo = new Zoo("Jardin Botanico");
-
-
-        ZooArea exoticAnimals = new ZooArea("Animales Exóticos", 5);
-        ZooArea inExtinction = new ZooArea("Animales en Peligro de Extinción", 3);
-        ZooArea inAdoption = new ZooArea("En Adopción", 5);
-        myZoo.addArea(exoticAnimals);
-        myZoo.addArea(inExtinction);
-        myZoo.addArea(inAdoption);
-
-        Animal dog4 = new Dog("Buddy", "Golden Retriever", 2020);
-        inAdoption.addAnimal(dog4);
-        System.out.println("Cantidad de animales en " + inAdoption.getAreaName() + ": " + inAdoption.getCurrentAnimalCount());
-        //todo:Implementar lógica para manejar la capacidad de los animales en las áreas
-        //todo:Usar Streams para filtrar y mostrar detalles de los animales
-
     }
     }
