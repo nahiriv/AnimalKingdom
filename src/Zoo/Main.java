@@ -1,5 +1,6 @@
 package Zoo;
 
+import java.io.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,7 +33,7 @@ public class Main {
         // Elephant in Large Herbivores
         Area2.addAnimal(Elephant1);
         Area2.addAnimal(Elephant2);
-        Area2.addAnimal(Elephant3); // Cannot add more than 2 animals (validation)
+        //Area2.addAnimal(Elephant3); // Cannot add more than 2 animals (validation)
 
         // Lions in Big Cats
         Area3.addAnimal(Lion2);
@@ -63,5 +64,19 @@ public class Main {
 
         List<ZooArea> filteredAnimals = Zoo1.getAreas().stream().filter(zooArea -> zooArea.getCurrentAnimalCount() > 1).toList();
         filteredAnimals.forEach(zooArea -> zooArea.getAnimals().forEach(animal -> System.out.println("-Specie:" + animal.getSpecie() + " Name: " + animal.getName() + " Age: " + (2024 -animal.getBirthYear()))));
+
+        // File Creation
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Animals.csv"))) {
+            writer.write(Lion1.getName()+","+Lion1.getSpecie()+","+Lion1.getBirthYear()+","+Area1.getAreaName()+","+Zoo1.getZooName());
+            writer.newLine();
+            writer.write(Lion2.getName()+","+Lion2.getSpecie()+","+Lion2.getBirthYear()+","+Area3.getAreaName()+","+Zoo1.getZooName());
+            writer.newLine();
+            writer.write(Lion3.getName()+","+Lion3.getSpecie()+","+Lion3.getBirthYear()+","+Area3.getAreaName()+","+Zoo1.getZooName());
+            writer.newLine();
+            writer.write(Lion4.getName()+","+Lion4.getSpecie()+","+Lion4.getBirthYear()+","+Area3.getAreaName()+","+Zoo1.getZooName());
+        } catch (IOException e){
+            System.out.println("An I/O error occurred: " + e.getMessage());
+        }
+
     }
 }

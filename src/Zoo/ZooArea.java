@@ -17,14 +17,12 @@ public class ZooArea {
     }
 
     //metodo para agregar un animal al área
-    public boolean addAnimal(Animal animal) {
+    public void addAnimal(Animal animal)  throws MaxAnimalsException{
         if (animals.size() < capacity) {
             animals.add(animal); // Agrega el animal a la lista
-            return true; // Indica que se agregó correctamente
         } else {
-            System.out.println("No se puede agregar " + animal.getName() + " al área " + name +
+            throw new MaxAnimalsException("No se puede agregar " + animal.getName() + " al área " + name +
                     ". Capacidad máxima alcanzada.");
-            return false; // Indica que no se pudo agregar
         }
     }
 
