@@ -3,6 +3,10 @@ package Zoo;
 import java.io.*;
 import java.util.List;
 import java.util.stream.Collectors;
+import Utils.CSVReader;
+import java.util.HashSet;
+
+
 
 public class Main {
     public static void main(String[] args) {
@@ -66,7 +70,7 @@ public class Main {
         filteredAnimals.forEach(zooArea -> zooArea.getAnimals().forEach(animal -> System.out.println("-Specie:" + animal.getSpecie() + " Name: " + animal.getName() + " Age: " + (2024 -animal.getBirthYear()))));
 
         // File Creation
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Animals.csv"))) {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("src/Files/OutputAnimals.csv"))) {
             writer.write(Lion1.getName()+","+Lion1.getSpecie()+","+Lion1.getBirthYear()+","+Area1.getAreaName()+","+Zoo1.getZooName());
             writer.newLine();
             writer.write(Lion2.getName()+","+Lion2.getSpecie()+","+Lion2.getBirthYear()+","+Area3.getAreaName()+","+Zoo1.getZooName());
@@ -78,5 +82,16 @@ public class Main {
             System.out.println("An I/O error occurred: " + e.getMessage());
         }
 
+        System.out.println("---------------------------");
+        String animalsFilename = "src/Files/InputAnimals.csv";
+        String areasFilename = "src/Files/InputAreas.csv";
+
+        List<Animal> animals = CSVReader.readAnimalsFromCSV(animalsFilename);
+        CSVReader.printAnimals(animals);
+        List<ZooArea> areas = CSVReader.readAreasFromCSV(areasFilename);
+        CSVReader.printAreas(areas);
+
+
     }
-}
+    }
+

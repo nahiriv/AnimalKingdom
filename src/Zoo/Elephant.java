@@ -5,6 +5,7 @@ public class Elephant implements Animal {
     private String specie;
     private int birthYear;
 
+
     public Elephant(String name, int birthYear) {
         this.name = name;
         this.birthYear = birthYear;
