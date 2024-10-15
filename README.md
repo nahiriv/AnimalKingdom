@@ -15,7 +15,7 @@
 - Error Handling: Proper exception handling is in place for file reading, such as dealing with missing files, format errors, and exceeding area capacities.
 
 ## Project Structure
-
+```bash
 Animal-Kingdom/
 ├── src/
 │   ├── Animals/
