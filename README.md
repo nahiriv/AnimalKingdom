@@ -11,10 +11,11 @@
 - A `ZooArea` class with a capacity attribute, indicating the maximum number of animals it can contain, and methods to manage animal addition.
 - Static attributes in the `Animal` class that count the total number of animals created, as well as static attributes in each derived class that count how many animals of that species have been created.
 - A main method in each package to test the creation of the zoo, areas, and animals, ensuring that an area does not exceed its capacity. It also uses a Stream to filter areas with more than a specified number of animals and prints their names, species, breeds, and ages.
+- File I/O: Animal and area data are loaded from CSV files using the CSVReaderWriter utility class.
+- Error Handling: Proper exception handling is in place for file reading, such as dealing with missing files, format errors, and exceeding area capacities.
 
 ## Project Structure
 
-```bash
 Animal-Kingdom/
 ├── src/
 │   ├── Animals/
@@ -28,7 +29,14 @@ Animal-Kingdom/
 │   │   ├── Lion.java
 │   │   ├── Elephant.java
 │   │   └── Main.java
+│   ├── Utils/
+│   │   └── CSVReaderWriter.java
+│   ├── files/
+│   │   ├── InputAnimals.csv
+│   │   └── InputAreas.csv
+│   │   └── OutputAnimals.csv  
 ├── README.md
 └── .gitignore
+
 
 
